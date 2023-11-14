@@ -1,37 +1,20 @@
-const openButton = document.querySelector('.open-button')
-const closeButton = document.querySelector('.close-button')
+const navOptions = document.querySelector('.nav-right')
+const actionButton = document.querySelector('.action-button')
+const openButton = document.querySelector('.visible')
+const closeButton = document.querySelector('.hide')
 document.addEventListener('DOMContentLoaded', () => {
-  openButton.addEventListener('click', addX)
-  closeButton.addEventListener('click', removeX)
+  actionButton.addEventListener('click', toggleMenu)
 })
 
-function addX(e){
-  equalSpan = document.querySelector('.add')
-  console.log(equalSpan)
-  console.log(e.target.textContent)
-  if (e.target.textContent == 'equal') {
-    openButton.classList.add('hide')
-    openButton.classList.remove('visible')
-    closeButton.classList.add('visible')
+function toggleMenu(){
+  if (navOptions.classList.contains('show-options')) {
+    navOptions.classList.remove('show-options')
+    closeButton.style.display = 'none'
+    openButton.style.display = 'inline-block'
+  } else {
+    navOptions.classList.add('show-options')
+    closeButton.style.display = 'inline-block'
     closeButton.classList.remove('hide')
-    e.target.textContent = 'close'
-    console.log(e.target.textContent)
-    
-  }
-}
-
-function removeX(e){
-  removeSpan = document.querySelector('.remove')
-  console.log(removeSpan)
-  console.log(e.target.textContent)
-  if (e.target.textContent == 'close') {
-    openButton.classList.add('visible')
-    openButton.classList.remove('hide')
-    closeButton.classList.add('hide')
-    closeButton.classList.remove('visible')
-    removeSpan.classList.add('hide')
-    removeSpan.classList.remove('visible')
-    e.target.textContent = 'equal'
-    console.log(e.target.textContent)
+    openButton.style.display = 'none'
   }
 }
