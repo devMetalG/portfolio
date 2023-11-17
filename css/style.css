@@ -19,8 +19,8 @@ body {
   color: #F2FBFF;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   position: relative;
-  background: rgb(0,0,26);
-  background: linear-gradient(50deg, rgba(0,0,26,1) 0%, rgb(41, 40, 59) 100%);
+  background: rgb(0, 0, 19);
+  background: linear-gradient(50deg, rgba(0,0,19,1) 0%, rgb(32, 31, 46) 100%);
 }
 
 .all-cont{
@@ -172,6 +172,7 @@ section:nth-child(4) .main-info {
   font-size: xx-large;
   animation: main-title 1s ease-out both;
   margin: 0;
+  color: rgb(166, 119, 241);
 }
 
 .main-subtitle {
@@ -180,12 +181,20 @@ section:nth-child(4) .main-info {
   font-size: x-large;
   margin: 0;
   animation: main-title 1s ease-out 1s both;
+  color: rgba(166, 119, 241, 0.699);
 }
 
 .main-paragraph {
+  text-align: center;
   font-weight:500;
   margin: 0;
   animation: main-title 1s ease-out 2s both;
+  color: rgb(171 221 250 / 64%);
+}
+
+.main-p-bold {
+  font-weight: bold;
+  color: rgb(166, 119, 241);
 }
 
 @keyframes main-title {
@@ -234,5 +243,5 @@ section:nth-child(4) .main-info {
 }
 
 .show-options{
-
+  color: #fff;
 }
