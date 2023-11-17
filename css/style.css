@@ -126,8 +126,9 @@ section {
 }
 
 /* section:nth-child(1) {
-  background-color: #1e2324;
-}
+  height: calc(100vh - var(--header-height));
+} */
+/*
 section:nth-child(2) {
   background-color: #ff5100;
 }
@@ -138,13 +139,15 @@ section:nth-child(4) {
   background-color: #851cdb
 } */
 
-.main-info:nth-child(1) {
-  animation: title-fade-out linear both;
-  animation-timeline: scroll(root);
-  animation-range: entry 0% cover 20%;
+.main-info {
+  animation: title-fade-in linear both;
+  animation-timeline: view();
+  view-timeline-axis: block;
+  animation-range: entry 20% cover 30%;
+  animation-fill-mode: both;
 }
 
-section:nth-child(2) .main-info {
+/* section:nth-child(2) .main-info {
   animation: title-fade-in linear both;
   animation-timeline: scroll(root);
   animation-range: entry 10% cover 30%;
@@ -159,7 +162,7 @@ section:nth-child(4) .main-info {
   animation: title-fade-in linear both;
   animation-timeline: scroll(root);
   animation-range: entry 70% cover 100%;
-}
+} */
 
 .main-art {
   display: flex;
@@ -169,7 +172,7 @@ section:nth-child(4) .main-info {
 .main-title {
   text-align: center;
   font-weight: bolder;
-  font-size: xx-large;
+  font-size: xxx-large;
   animation: main-title 1s ease-out both;
   margin: 0;
   color: rgb(166, 119, 241);
@@ -178,7 +181,7 @@ section:nth-child(4) .main-info {
 .main-subtitle {
   text-align: center;
   font-weight: bolder;
-  font-size: x-large;
+  font-size: xx-large;
   margin: 0;
   animation: main-title 1s ease-out 1s both;
   color: rgba(166, 119, 241, 0.699);
@@ -187,6 +190,7 @@ section:nth-child(4) .main-info {
 .main-paragraph {
   text-align: center;
   font-weight:500;
+  font-size: larger;
   margin: 0;
   animation: main-title 1s ease-out 2s both;
   color: rgb(171 221 250 / 64%);
