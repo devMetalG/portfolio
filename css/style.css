@@ -1,5 +1,8 @@
 :root {
   --header-height: 64px;
+  --primary-color: rgb(166, 111, 255);
+  --secondary-color: rgb(135, 182, 255);
+  --text-color: rgb(255, 255, 255);
 }
 
 *{
@@ -30,7 +33,7 @@ body {
 
 .header{
   position: sticky;
-  top: 0;
+  top: -1px;
   width: 100%;
   max-width: 100%;
   z-index: 1;
@@ -48,7 +51,7 @@ body {
 
 .nav-logo {
   height: 50px;
-  width: 100%;
+  width: auto;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -113,31 +116,27 @@ body {
 }
 
 section {
-  height: calc(100vh - var(--header-height));
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+section:nth-child(1), 
+section:nth-child(4) {
+  height: calc(100vh - var(--header-height));
+}
+
+.main-section {
+  padding: 5rem 0;
+}
+
+/* MAIN */
 
 .main-info {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-
-/* section:nth-child(1) {
-  height: calc(100vh - var(--header-height));
-} */
-/*
-section:nth-child(2) {
-  background-color: #ff5100;
-}
-section:nth-child(3) {
-  background-color: #15bb1d;
-}
-section:nth-child(4) {
-  background-color: #851cdb
-} */
 
 .main-info {
   animation: title-fade-in linear both;
@@ -146,23 +145,6 @@ section:nth-child(4) {
   animation-range: entry 20% cover 30%;
   animation-fill-mode: both;
 }
-
-/* section:nth-child(2) .main-info {
-  animation: title-fade-in linear both;
-  animation-timeline: scroll(root);
-  animation-range: entry 10% cover 30%;
-}
-section:nth-child(3) .main-info {
-  animation: title-fade-in linear both;
-  animation-timeline: scroll(root);
-  animation-range: entry 40% cover 60%;
-}
-
-section:nth-child(4) .main-info {
-  animation: title-fade-in linear both;
-  animation-timeline: scroll(root);
-  animation-range: entry 70% cover 100%;
-} */
 
 .main-art {
   display: flex;
@@ -175,7 +157,7 @@ section:nth-child(4) .main-info {
   font-size: xxx-large;
   animation: main-title 1s ease-out both;
   margin: 0;
-  color: rgb(166, 119, 241);
+  color: var(--primary-color);
 }
 
 .main-subtitle {
@@ -184,7 +166,7 @@ section:nth-child(4) .main-info {
   font-size: xx-large;
   margin: 0;
   animation: main-title 1s ease-out 1s both;
-  color: rgba(166, 119, 241, 0.699);
+  color: var(--secondary-color);
 }
 
 .main-paragraph {
@@ -193,12 +175,30 @@ section:nth-child(4) .main-info {
   font-size: larger;
   margin: 0;
   animation: main-title 1s ease-out 2s both;
-  color: rgb(171 221 250 / 64%);
+  color: var(--text-color);
+}
+
+.main-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: main-title 1s ease-out 2s both;
+}
+
+.main-icons a {
+  text-decoration: none;
+  color: none;
+  cursor: pointer;
+  font-size: larger;
+}
+
+.main-icon {
+  fill: var(--secondary-color);
 }
 
 .main-p-bold {
   font-weight: bold;
-  color: rgb(166, 119, 241);
+  color: var(--primary-color);
 }
 
 @keyframes main-title {
@@ -248,4 +248,53 @@ section:nth-child(4) .main-info {
 
 .show-options{
   color: #fff;
+}
+
+/* ABOUT */
+
+.main-timeline {
+  padding: 1.25rem;
+  animation: main-title 1s ease-out 2s both;
+}
+
+.line-content {
+  position: relative;
+  border-left: 1px solid;
+  border-color: var(--secondary-color);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item-list {
+  -webkit-margin-start: 1rem;
+  margin-inline-start: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.item-icon {
+  background-color: var(--secondary-color);
+  border-width: 1px;
+  border-color: var(--secondary-color);
+  border-radius: 100px;
+  width: 0.75rem;
+  height: 0.75rem;
+  margin-top: 0.375rem;
+  position: absolute;
+  left: -0.375rem;
+}
+
+.item-time {
+  color: var(--secondary-color);
+  margin: 0.3rem 0;
+}
+
+.item-title {
+  margin: 0.3rem 0;
+  color: var(--primary-color);
+}
+
+.item-p {
+  margin: 0;
+  color: var(--text-color);
 }
