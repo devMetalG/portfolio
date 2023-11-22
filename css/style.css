@@ -1,5 +1,6 @@
 :root {
   --header-height: 64px;
+  --main-color: rgb(0, 0, 19);
   --primary-color: rgb(166, 111, 255);
   --secondary-color: rgb(135, 182, 255);
   --text-color: rgb(255, 255, 255);
@@ -125,6 +126,7 @@ section {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 section:nth-child(1), 
@@ -145,6 +147,7 @@ section:nth-child(4) {
 }
 
 .main-info {
+  width: 100%;
   animation: title-fade-in linear both;
   animation-timeline: view();
   view-timeline-axis: block;
@@ -155,11 +158,14 @@ section:nth-child(4) {
 .main-art {
   display: flex;
   padding: 1rem;
+  width: 100%;
+  justify-content: center;
 }
 
 .main-title {
   text-align: center;
   font-weight: bolder;
+  font-size: -webkit-xxx-large;
   font-size: xxx-large;
   animation: main-title 1s ease-out both;
   margin: 0;
@@ -297,11 +303,86 @@ section:nth-child(4) {
 .item-title {
   margin: 0.3rem 0;
   color: var(--primary-color);
+  font-size: large;
 }
 
 .item-p {
   margin: 0;
   color: var(--text-color);
+  font-size: large;
+}
+
+/* Projects */
+.main-projects {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.main-project {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  background-color: rgba(151, 65, 252, 0.2);
+  padding: 10px;
+  border-radius: 0.5rem;
+}
+
+.project-img {
+  display: flex;
+  justify-content: center;
+}
+
+.project-img img {
+  width: 100%;
+  border-radius: 0.5rem;
+}
+
+.p-info-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.p-info-top h4 {
+  margin: 0.3rem;
+  font-size: x-large;
+  color: var(--secondary-color);
+}
+
+.p-info-top a {
+  text-decoration: none;
+  cursor: pointer;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  padding: 0.2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-info-top a svg {
+  fill: var(--primary-color);
+}
+
+.p-info-bottom p {
+  font-size: large;
+}
+
+.view-more,
+.view-less {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.view-less,
+.view-more-p {
+  display: none;
 }
 
 @media only screen and (min-width: 1000px){
