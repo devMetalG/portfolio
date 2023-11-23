@@ -58,6 +58,7 @@ body {
 }
 
 .nav-button {
+  gap: 20px;
   align-items: center;
   background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
   border: 0;
@@ -70,9 +71,9 @@ body {
   font-size: 18px;
   justify-content: center;
   line-height: 1em;
-  max-width: 100%;
-  min-width: 140px;
-  padding: 3px;
+  max-width: 140px;
+  width: 100%;
+  padding: 2px;
   text-decoration: none;
   -webkit-user-select: none;
   user-select: none;
@@ -82,11 +83,6 @@ body {
   transition: all .3s;
  }
  
- .nav-button:active,
- .nav-button:hover {
-  outline: 0;
- }
- 
  .nav-button span {
   background-color: rgb(5, 6, 45);
   padding: 16px 24px;
@@ -94,14 +90,7 @@ body {
   width: 100%;
   height: 100%;
   transition: 300ms;
- }
- 
- .nav-button:hover span {
-  background: none;
- }
- 
- .nav-button:active {
-  transform: scale(0.9);
+  fill: var(--text-color);
  }
 
  .action-button {
@@ -143,6 +132,7 @@ section:nth-child(4) {
 .main-info {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
 }
 
@@ -315,15 +305,17 @@ section:nth-child(4) {
 /* Projects */
 .main-projects {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .main-project {
   display: grid;
   gap: 10px;
-  width: 100%;
+  width: 350px;
   background-color: rgba(151, 65, 252, 0.2);
   padding: 10px;
   border-radius: 0.5rem;
@@ -377,11 +369,11 @@ section:nth-child(4) {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
 }
 
 .view-less,
-.view-more-p {
+.hide-d {
   display: none;
 }
 
@@ -406,11 +398,33 @@ section:nth-child(4) {
     text-align: inherit;
   }
 
+  .t-contact,
+  .t-projects,
+  .t-about {
+    text-align: center;
+  }
+
+  .main-project {
+    width: 420px;
+  }
+
   .main-icons {
     justify-content: start;
   }
 
   .action-button {
     display: none;
+  }
+
+  .nav-button:active,
+  .nav-button:hover {
+   outline: 0;
+  }
+  .nav-button:hover span {
+   background: none;
+  }
+  
+  .nav-button:active {
+   transform: scale(0.9);
   }
 }
