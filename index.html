@@ -23,7 +23,27 @@
             <span class="span-button visible material-symbols-rounded">equal</span>
             <span class="span-button hide material-symbols-rounded">close</span>
           </button>
-          
+          <a 
+            href="#about" 
+            class="nav-button b-desktop b-about" 
+            type="button"
+          >
+            <span>About</span>
+          </a>
+          <a 
+            href="#projects" 
+            class="nav-button b-desktop b-projects" 
+            type="button"
+          >
+            <span>Projects</span>
+          </a>
+          <a 
+            href="#contact" 
+            class="nav-button b-desktop b-contact" 
+            type="button"
+          >
+            <span>Contact</span>
+          </a>
         </div>
       </nav>
     </header>
@@ -53,7 +73,7 @@
           </div>
         </article>
       </section>
-      <section>
+      <section class="about">
         <article class="main-art">
           <div class="main-info">
             <h2 class="main-title t-about">About</h2>
@@ -94,7 +114,7 @@
           </div>
         </article>
       </section>
-      <section>
+      <section class="projects">
         <article class="main-art">
           <div class="main-info">
             <h2 class="main-title t-projects">Projects</h2>
@@ -106,7 +126,7 @@
                 <div class="project-info">
                   <div class="p-info-top">
                     <h4>Crypto Quoter</h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <a href="https://crypto-quoter-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
                   </div>
@@ -138,7 +158,7 @@
                 <div class="project-info">
                   <div class="p-info-top">
                     <h4>Recipe Finder</h4>
-                    <a href="https://recipe-finder-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <a href="https://recipe-finder-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
                   </div>
@@ -159,112 +179,135 @@
                     </a>
                   </div>
                   <div class="p-info-bottom">
-                    <p>
-                      A CRM client project developed using IndexedDB enables efficient management of customer data. It allows for creating, reading, updating, and deleting (CRUD) client information within the browser, offering a streamlined system to organize and maintain a database of customer details for effective customer relationship management.</p>
+                    <p>A CRM client project developed using IndexedDB enables efficient management of customer data. It allows for creating, reading, updating, and deleting (CRUD) client information within the browser, offering a streamlined system to organize and maintain a database of customer details for effective customer relationship management.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/billtip.png" alt="Bill & Tip" title="Bill & Tip" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Bill & Tip Calculator</h4>
+                    <a href="https://bill-and-tip-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>A restaurant-based bill and tip calculator project using JSON Server calculates totals based on the number of dishes ordered. Integrated with a JSON-based server, it enables users to input their ordered dishes.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/weather.png" alt="Weather" title="Weather" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Weather</h4>
+                    <a href="https://weather-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>A weather app project fetches and displays real-time weather data for a selected city by utilizing an external API. </p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/vet.png" alt="Veterinary Patients" title="Veterinary Patients" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Veterinary Patients</h4>
+                    <a href="https://veterinary-patients-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>A veterinary patient management system enables the creation and scheduling of appointments after filling out a patient's form.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/weekly.png" alt="Weekly Expense" title="Weekly Expense" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Weekly Expense</h4>
+                    <a href="https://weekly-expense-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>Tracks and monitors weekly expenses by allowing users to input daily spending, categorize expenses, and keep a tally of total expenditures throughout the week.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/insurance.png" alt="Car Insurance" title="Car Insurance" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Quote Insurance</h4>
+                    <a href="https://quote-insurance-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>Calculates insurance costs based on basic or comprehensive coverage, considering the car's year and make. Users input details to estimate insurance premiums for different coverage types.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/cart.png" alt="Cart LS" title="Cart LS" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Cart LocalStorage</h4>
+                    <a href="https://cart-localstorage-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>Saves selected courses that a user wants to purchase in the browser's localStorage. This allows users to store their chosen items even when they leave the website, ensuring the cart contents persist across sessions for a smoother shopping experience.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/tweets.png" alt="Tweet LS" title="Tweet LS" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Tweet LocalStorage</h4>
+                    <a href="https://tweet-localstorage-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p>Stores user-inputted tweets in the browser's localStorage. This feature enables users to save their composed tweets locally, ensuring that their tweet content is retained even when they navigate away from the page or refresh the browser.</p>
                   </div>
                 </div>
               </div>
               <div class="main-project view-more-p hide-d">
                 <div class="project-img">
-                  <img src="" alt="">
+                  <img src="img/form-validation.png" alt="form validation" title="form validation" width="500">
                 </div>
                 <div class="project-info">
                   <div class="p-info-top">
-                    <h4></h4>
-                    <a href="https://crypto-quoter-dm.netlify.app/" target="_blank" rel="noopener noreferrer" title="Crypto">
+                    <h4>Form Validation</h4>
+                    <a href="https://form-validation-dm.netlify.app" target="_blank" rel="noopener noreferrer" title="Crypto">
                       <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 4h-13v18h20v-11h1v12h-22v-20h14v1zm10 5h-1v-6.293l-11.646 11.647-.708-.708 11.647-11.646h-6.293v-1h8v8z"/></svg>
                     </a>
+                  </div>
+                  <div class="p-info-bottom">
+                    <p> Checks and validates form inputs while simulating the email submission process for user understanding and error detection.</p>
                   </div>
                 </div>
               </div>
@@ -282,7 +325,7 @@
           </div>
         </article>
       </section>
-      <section class="main-section">
+      <section class="main-section contact">
         <article class="main-art">
           <div class="main-info">
             <h2 class="main-title t-contact">Contact</h2>
