@@ -16,15 +16,34 @@ const btnAbout = document.querySelector('.b-about')
 const btnProjects = document.querySelector('.b-projects')
 const btnContact = document.querySelector('.b-contact')
 
+// BackToTop
+const btnBTT = document.querySelector('.btn-btt')
+
 document.addEventListener('DOMContentLoaded', () => {
   actionButton.addEventListener('click', toggleMenu)
   moreButton.addEventListener('click', toggleMore)
   btnAbout.addEventListener('click', goSection)
   btnProjects.addEventListener('click', goSection)
   btnContact.addEventListener('click', goSection)
+  btnBTT.addEventListener('click', backToTop)
 })
 
-function goSection (e){
+window.addEventListener('scroll', function(){
+  if (window.scrollY > 500) {
+    btnBTT.classList.add('show')
+  } else {
+    btnBTT.classList.remove('show')
+  }
+})
+
+function backToTop () {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
+
+function goSection (e) {
   e.preventDefault()
   const section = e.target.textContent.toLowerCase()
   const view = document.querySelector(`.${section}`)
