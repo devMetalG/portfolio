@@ -25,6 +25,10 @@ const btnAboutM = document.querySelector('.m-about')
 const btnProjectsM = document.querySelector('.m-projects')
 const btnContactM = document.querySelector('.m-contact')
 
+// copytoclip
+const btnCopy = document.querySelector('.copy-btn')
+const toast = document.querySelector('.toast')
+
 document.addEventListener('DOMContentLoaded', () => {
   actionButton.addEventListener('click', toggleMenu)
   
@@ -39,7 +43,24 @@ document.addEventListener('DOMContentLoaded', () => {
   btnAboutM.addEventListener('click', goSection)
   btnProjectsM.addEventListener('click', goSection)
   btnContactM.addEventListener('click', goSection)
+
+  btnCopy.addEventListener('click', copyToClipboard)
 })
+
+function copyToClipboard(){
+  const text = 'devmetalg@hotmail.com'
+
+  navigator.clipboard.writeText(text)
+  toastAlert('Copied!!')
+}
+
+function toastAlert(message) {
+  toast.textContent = message
+  toast.classList.add('show-t')
+  setTimeout(() => {
+    toast.classList.remove('show-t')
+  }, 3000);
+}
 
 window.addEventListener('scroll', function(){
   if (window.scrollY > 500) {

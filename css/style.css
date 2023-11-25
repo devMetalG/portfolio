@@ -44,7 +44,7 @@ body {
   padding: 2px;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
+  transition: opacity .3s ease, visibility .3s ease;
 }
 
 .show {
@@ -453,6 +453,53 @@ section:nth-child(4) {
   display: none;
 }
 
+/* Contact */
+.contact-p {
+  font-size: large;
+  text-wrap: pretty;
+}
+
+.contact-mail {
+  font-size: large;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.copy-btn {
+  width: 120px;
+}
+
+.contact-span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-span h4 {
+  margin: 0;
+}
+
+/* Toast */
+
+.toast {
+  visibility: hidden;
+  min-width: 80px;
+  background-color: rgb(71, 173, 71);
+  color: var(--text-color);
+  text-align: center;
+  border-radius: 8px;
+  padding: 16px;
+  position: fixed;
+  z-index: 2;
+  right: 10px;
+  top: 70px;
+  font-size: large;
+}
+
+.toast.show-t {
+  visibility: visible;
+}
+
 @media only screen and (min-width: 1000px){
   section {
     max-width: 1000px;
@@ -506,14 +553,18 @@ section:nth-child(4) {
   }
 
   .nav-button:active,
-  .nav-button:hover {
+  .nav-button:hover,
+  .btn-btt:active,
+  .btn-btt:hover {
    outline: 0;
   }
-  .nav-button:hover span {
+  .nav-button:hover span,
+  .btn-btt:hover span {
    background: none;
   }
   
-  .nav-button:active {
+  .nav-button:active,
+  .contact-span:active {
    transform: scale(0.9);
   }
 }
