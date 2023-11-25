@@ -484,11 +484,11 @@ section:nth-child(4) {
 .toast {
   visibility: hidden;
   min-width: 80px;
-  background-color: rgb(71, 173, 71);
+  background-color: #5b42f3;
   color: var(--text-color);
   text-align: center;
   border-radius: 8px;
-  padding: 16px;
+  padding: 10px;
   position: fixed;
   z-index: 2;
   right: 10px;
