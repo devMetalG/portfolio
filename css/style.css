@@ -552,6 +552,10 @@ section:nth-child(4) {
     display: none;
   }
 
+  .btn-btt span {
+    transition: .3s;
+  }
+
   .nav-button:active,
   .nav-button:hover,
   .btn-btt:active,
