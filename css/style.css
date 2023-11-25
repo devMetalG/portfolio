@@ -462,7 +462,8 @@ section:nth-child(4) {
 .contact-mail {
   font-size: large;
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--secondary-color);
+  font-weight: bold;
 }
 
 .copy-btn {
