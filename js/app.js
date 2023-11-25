@@ -3,6 +3,7 @@ const navOptions = document.querySelector('.nav-right')
 const actionButton = document.querySelector('.action-button')
 const openButton = document.querySelector('.visible')
 const closeButton = document.querySelector('.hide')
+const navMobile = document.querySelector('.nav-mobile')
 
 // toggleMore
 const projectsCont = document.querySelector('.main-projects')
@@ -19,13 +20,25 @@ const btnContact = document.querySelector('.b-contact')
 // BackToTop
 const btnBTT = document.querySelector('.btn-btt')
 
+// navButtons mobile
+const btnAboutM = document.querySelector('.m-about')
+const btnProjectsM = document.querySelector('.m-projects')
+const btnContactM = document.querySelector('.m-contact')
+
 document.addEventListener('DOMContentLoaded', () => {
   actionButton.addEventListener('click', toggleMenu)
+  
   moreButton.addEventListener('click', toggleMore)
+  
   btnAbout.addEventListener('click', goSection)
   btnProjects.addEventListener('click', goSection)
   btnContact.addEventListener('click', goSection)
+  
   btnBTT.addEventListener('click', backToTop)
+
+  btnAboutM.addEventListener('click', goSection)
+  btnProjectsM.addEventListener('click', goSection)
+  btnContactM.addEventListener('click', goSection)
 })
 
 window.addEventListener('scroll', function(){
@@ -44,10 +57,18 @@ function backToTop () {
 }
 
 function goSection (e) {
+  closeNav()
   e.preventDefault()
   const section = e.target.textContent.toLowerCase()
   const view = document.querySelector(`.${section}`)
   view.scrollIntoView({ behavior: 'smooth' })
+}
+
+function closeNav () {
+  navMobile.style.right = '-80vw'
+  navOptions.classList.remove('show-options')
+  closeButton.style.display = 'none'
+  openButton.style.display = 'inline-block'
 }
 
 function toggleMenu(){
@@ -55,11 +76,13 @@ function toggleMenu(){
     navOptions.classList.remove('show-options')
     closeButton.style.display = 'none'
     openButton.style.display = 'inline-block'
+    navMobile.style.right = '-80vw'
   } else {
     navOptions.classList.add('show-options')
     closeButton.style.display = 'inline-block'
     closeButton.classList.remove('hide')
     openButton.style.display = 'none'
+    navMobile.style.right = '0'
   }
 }
 
@@ -73,7 +96,6 @@ function toggleMore(){
     projects.forEach(project => {
       project.classList.add('hide-d')
     })
-
   } else {
     projectsCont.classList.add('show-options')
     spanLess.style.display = 'flex'
@@ -84,6 +106,5 @@ function toggleMore(){
     projects.forEach(project => {
       project.classList.remove('hide-d')
     })
-
   }
 }
