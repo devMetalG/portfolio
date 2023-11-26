@@ -265,8 +265,13 @@ section:nth-child(4) {
 
 .main-icons a {
   text-decoration: none;
-  color: none;
   cursor: pointer;
+}
+
+.main-icons img {
+  height: 50px;
+  width: 50px;
+  fill: var(--secondary-color);
 }
 
 .main-icon {
