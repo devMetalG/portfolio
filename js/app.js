@@ -19,6 +19,7 @@ const btnContact = document.querySelector('.b-contact')
 
 // BackToTop
 const btnBTT = document.querySelector('.btn-btt')
+const navLogo = document.querySelector('.nav-logo')
 
 // navButtons mobile
 const btnAboutM = document.querySelector('.m-about')
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
   btnContact.addEventListener('click', goSection)
   
   btnBTT.addEventListener('click', backToTop)
+  navLogo.addEventListener('click', backToTop)
 
   btnAboutM.addEventListener('click', goSection)
   btnProjectsM.addEventListener('click', goSection)
