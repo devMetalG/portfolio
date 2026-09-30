@@ -6,6 +6,10 @@ A static portfolio built with semantic HTML, CSS, and vanilla JavaScript. No bui
 
 Open `index.html` in a browser. The site also works on any static host, including the existing Vercel deployment.
 
+## Deployment
+
+`package.json` pins Vercel's build environment to Node.js 24.x, overriding the legacy Node.js 18 setting in the project dashboard. It adds no dependencies or build step; the portfolio remains a static site. Changes pushed to `main` trigger the existing Vercel and GitHub Pages integrations.
+
 ## Content
 
 - Edit the profile, professional experience, technical skills, and contact links in `index.html`.
