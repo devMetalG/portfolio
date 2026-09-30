@@ -1,133 +1,91 @@
-// toggleMenu
-const navOptions = document.querySelector('.nav-right')
-const actionButton = document.querySelector('.action-button')
-const openButton = document.querySelector('.visible')
-const closeButton = document.querySelector('.hide')
-const navMobile = document.querySelector('.nav-mobile')
+document.documentElement.classList.add('js');
+const svgNamespace = 'http://www.w3.org/2000/svg';
 
-// toggleMore
-const projectsCont = document.querySelector('.main-projects')
-const projects = document.querySelectorAll('.view-more-p')
-const moreButton = document.querySelector('#more')
-const spanMore = document.querySelector('.view-more')
-const spanLess = document.querySelector('.hide-p')
-
-// navButtons
-const btnAbout = document.querySelector('.b-about')
-const btnProjects = document.querySelector('.b-projects')
-const btnContact = document.querySelector('.b-contact')
-
-// BackToTop
-const btnBTT = document.querySelector('.btn-btt')
-const navLogo = document.querySelector('.nav-logo')
-
-// navButtons mobile
-const btnAboutM = document.querySelector('.m-about')
-const btnProjectsM = document.querySelector('.m-projects')
-const btnContactM = document.querySelector('.m-contact')
-
-// copytoclip
-const btnCopy = document.querySelector('.copy-btn')
-const toast = document.querySelector('.toast')
-
-document.addEventListener('DOMContentLoaded', () => {
-  actionButton.addEventListener('click', toggleMenu)
-  
-  moreButton.addEventListener('click', toggleMore)
-  
-  btnAbout.addEventListener('click', goSection)
-  btnProjects.addEventListener('click', goSection)
-  btnContact.addEventListener('click', goSection)
-  
-  btnBTT.addEventListener('click', backToTop)
-  navLogo.addEventListener('click', backToTop)
-
-  btnAboutM.addEventListener('click', goSection)
-  btnProjectsM.addEventListener('click', goSection)
-  btnContactM.addEventListener('click', goSection)
-
-  btnCopy.addEventListener('click', copyToClipboard)
-})
-
-function copyToClipboard(){
-  const text = 'devmetalg@hotmail.com'
-
-  navigator.clipboard.writeText(text)
-  toastAlert('Copied!!')
+// Render the locally bundled Lucide icon nodes without a network dependency.
+function renderIcon(placeholder, name) {
+  const nodes = window.PORTFOLIO_ICONS?.[name];
+  if (!nodes) return;
+  const svg = document.createElementNS(svgNamespace, 'svg');
+  const attributes = {
+    viewBox: '0 0 24 24', fill: 'none', stroke: 'currentColor',
+    'stroke-width': '1.5', 'stroke-linecap': 'round', 'stroke-linejoin': 'round',
+    'aria-hidden': 'true', focusable: 'false',
+    class: `icon ${placeholder.getAttribute('class') || ''}`.trim(),
+  };
+  Object.entries(attributes).forEach(([key, value]) => svg.setAttribute(key, value));
+  nodes.forEach(([tag, attrs]) => {
+    const node = document.createElementNS(svgNamespace, tag);
+    Object.entries(attrs).forEach(([key, value]) => node.setAttribute(key, value));
+    svg.append(node);
+  });
+  placeholder.replaceWith(svg);
+  return svg;
 }
 
-function toastAlert(message) {
-  toast.textContent = message
-  toast.classList.add('show-t')
-  setTimeout(() => {
-    toast.classList.remove('show-t')
-  }, 3000);
+document.querySelectorAll('[data-icon]').forEach(node => renderIcon(node, node.dataset.icon));
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+const menuButton = document.querySelector('.menu-toggle');
+const navigation = document.querySelector('.main-nav');
+const themePicker = document.querySelector('.theme-picker');
+const mobileViewport = window.matchMedia('(max-width: 720px)');
+
+function setMenu(open) {
+  if (open) themePicker.open = false;
+  menuButton.setAttribute('aria-expanded', String(open));
+  menuButton.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+  navigation.hidden = mobileViewport.matches && !open;
+  renderIcon(menuButton.querySelector('.icon'), open ? 'X' : 'Menu');
 }
 
-window.addEventListener('scroll', function(){
-  if (window.scrollY > 500) {
-    btnBTT.classList.add('show')
-  } else {
-    btnBTT.classList.remove('show')
+setMenu(false);
+themePicker.addEventListener('toggle', () => {
+  if (themePicker.open) setMenu(false);
+});
+menuButton.addEventListener('click', () => setMenu(menuButton.getAttribute('aria-expanded') !== 'true'));
+mobileViewport.addEventListener('change', () => setMenu(false));
+navigation.addEventListener('click', event => { if (event.target.closest('a')) setMenu(false); });
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+    setMenu(false);
+    menuButton.focus();
   }
-})
+});
+document.addEventListener('click', event => {
+  if (!event.composedPath().includes(document.querySelector('.site-header'))) setMenu(false);
+});
 
-function backToTop () {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  })
+const navigationLinks = [...navigation.querySelectorAll('a')];
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navigationLinks.forEach(link => {
+        if (link.hash === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+    });
+  }, { rootMargin: '-15% 0px -60% 0px' });
+  document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
 }
 
-function goSection (e) {
-  closeNav()
-  e.preventDefault()
-  const section = e.target.textContent.toLowerCase()
-  const view = document.querySelector(`.${section}`)
-  view.scrollIntoView({ behavior: 'smooth' })
+const copyButton = document.querySelector('.copy-email');
+const toast = document.querySelector('.toast');
+let toastTimeout;
+
+function notify(message) {
+  clearTimeout(toastTimeout);
+  toast.textContent = message;
+  toast.classList.add('is-visible');
+  toastTimeout = setTimeout(() => toast.classList.remove('is-visible'), 4000);
 }
 
-function closeNav () {
-  navMobile.style.right = '-80vw'
-  navOptions.classList.remove('show-options')
-  closeButton.style.display = 'none'
-  openButton.style.display = 'inline-block'
-}
-
-function toggleMenu(){
-  if (navOptions.classList.contains('show-options')) {
-    navOptions.classList.remove('show-options')
-    closeButton.style.display = 'none'
-    openButton.style.display = 'inline-block'
-    navMobile.style.right = '-80vw'
-  } else {
-    navOptions.classList.add('show-options')
-    closeButton.style.display = 'inline-block'
-    closeButton.classList.remove('hide')
-    openButton.style.display = 'none'
-    navMobile.style.right = '0'
+copyButton.addEventListener('click', async () => {
+  const email = document.querySelector('.contact-email > a').getAttribute('href').slice(7);
+  try {
+    await navigator.clipboard.writeText(email);
+    notify('Email address copied.');
+  } catch {
+    notify('Could not copy. Email me at ' + email);
   }
-}
-
-function toggleMore(){
-  if (projectsCont.classList.contains('show-options')) {
-    projectsCont.classList.remove('show-options')
-    spanMore.style.display = 'flex'
-    spanMore.classList.add('view-more')
-    spanLess.style.display = 'none'
-    
-    projects.forEach(project => {
-      project.classList.add('hide-d')
-    })
-  } else {
-    projectsCont.classList.add('show-options')
-    spanLess.style.display = 'flex'
-    spanLess.classList.add('view-more')
-    spanLess.classList.remove('view-less')
-    spanMore.style.display = 'none'
-    
-    projects.forEach(project => {
-      project.classList.remove('hide-d')
-    })
-  }
-}
+});
